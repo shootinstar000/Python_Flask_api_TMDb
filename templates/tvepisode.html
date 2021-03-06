@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block tvepisode %}
+    <div class="episode-tv" action="/tvepisode"> <!--/{{ id }}/{{ season_number }}"> -->
+        {% for res in show_season.episodes %}        
+        <div class="episode-data"> 
+            <h3>{{ res.name }}</h3>
+            <p>Release {{ res.air_date }}</p>                 
+            <p>Episodes {{ res.episode_number }}</p>  
+            <p>{{ res.overview }}</p>
+            <img src="{{ url_img_base }}{{ res.still_path }}" alt="{{ res.name }}">                
+        </div>       
+        {% endfor %}
+    </div>
+{% endblock %}

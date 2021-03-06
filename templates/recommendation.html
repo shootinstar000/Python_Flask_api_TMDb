@@ -1,0 +1,14 @@
+{% extends "index.html" %}
+{% block recommen %}
+<!-- Search -----------------------> 
+  <h2>Our recommendations</h2>   
+  <div class="reco-card" action="/recommendation/{{ id }}">
+  {% for res in reco %}  
+    <div class="reco-box">                             
+      <div class="reco-poster">                      
+        <a href="/detail/{{ res.id }}"><img src="{{ url_img_base }}{{ res.poster_path }}" alt="{{ res.title }}"></a>                
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+{% endblock %}

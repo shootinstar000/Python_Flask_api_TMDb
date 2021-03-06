@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+{% block detail %}
+    
+    <div class="trailer" action="/detail.html/{{id}}" method="POST"> 
+        <div class="data">        
+            <h3>{{ searchs_details.title }}</h3>
+            <p>{{ year }}</p> 
+            <img src="https://image.tmdb.org/t/p/w185{{ searchs_details.backdrop_path }}" alt="{{ searchs_details.original_title }}">
+            <p>{{ genres }}</p>  
+        </div>               
+            <div class="trailer-frame">
+                <iframe src="https://www.youtube.com/embed/{{ trailer }}" frameborder="0" allowfullscreen></iframe> <!--width="480" height="270"-->
+                <div class="overw">
+                    <p>{{ searchs_details.overview }}</p>
+                </div>            
+        </div>
+        <a class="enlace" href="/recommendation/{{ searchs_details.id }}">Our recommendations</a>
+        </div> 
+        
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block trending %}
+    <div class="card-trend" action="/trending" method="POST">
+        {% for trend in trends %}
+            <div class="card-box">
+              {% if trend.media_type == 'tv' %}                   
+              <a href="/tvseason/{{ trend.id }}">                
+                <img class="poster" src="{{ url_img_base }}{{ trend.poster_path }}" alt="{{ trend.title }}">                
+              </a>
+              {% endif %}
+              {% if trend.media_type == 'movie' %}
+              <a href="/detail/{{ trend.id }}">                
+                <img class="poster" src="{{ url_img_base }}{{ trend.poster_path }}" alt="{{ trend.title }}">                
+              </a>
+              {% endif %}              
+            </div>
+            {% endfor %}
+    </div>
+{% endblock %}

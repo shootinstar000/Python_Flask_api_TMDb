@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block tvseason %}
+<div class="season-content">
+{% for res in tv_details.seasons %}        
+    <div class="season-tv" action="/tvseason/{{ id }}"> 
+        <div class="name-season">
+            <h3>{{ res.name }}</h3>
+            <a href="/tvepisode/{{ tv_details.id }}/{{ res.season_number }}"><img class="tvshow-poster"src="{{ url_img_base }}{{ res.poster_path }}" alt="{{ res.name }}"></a>
+        </div>
+        <div class="data-tv">
+            <p>Release {{ res.air_date }}</p>                 
+            <p>Episodes {{ res.episode_count }}</p>  
+            <p>{{ res.overview }}</p>
+        </div>              
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

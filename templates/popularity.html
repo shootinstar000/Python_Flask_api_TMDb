@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block popularity %}
+    <div class="card-popular" action="/popularity" method="POST">
+        {% for popular in populars %}
+            <div class="card-box">                   
+              <a href="/detail/{{ popular.id }}">
+                <img class="poster" src="{{ url_img_base }}{{ popular.poster_path }}" alt="{{ popular.title }}">                
+              </a>              
+            </div>
+            {% endfor %}
+    </div>
+{% endblock %}

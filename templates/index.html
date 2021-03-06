@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eMovie</title>
+  <!-- Fav Icon -->
+  <link rel="shortcut icon" type="image/ico" href= "{{ url_for('.static', filename='img/favicon.ico')}}"/>
+  <!-- CSS Custom-->
+  <link rel="stylesheet" type='text/css' href="{{ url_for('.static', filename = 'css/style.css') }}" >  
+  <!-- CDN Bootwatch 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/slate/bootstrap.min.css"> -->
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/e3ac1915e9.js" crossorigin="anonymous"></script>
+</head>
+<body>  
+  <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+      <!-- Logo -->
+      <a class="navbar-brand" href="/" id="logo">
+        <img class="logo" src="{{ url_for('.static', filename='img/faviconblue.ico')}}" alt="">
+      </a>         
+      <!-- Menu --------------- -->         
+      <ul class="navbar-nav">
+        <li><a href="/"> Home </a></li>
+        <li><a href="/movie"> Movies </a></li>
+        <li><a href="/tvshow"> Series </a></li>
+        <li><a href="/popularity"> Popular </a></li>
+        <li><a href="/discover"> Discover</a></li>          
+      </ul>      
+    </nav>  
+  </header>          
+  <!--  -->
+  <section class="showcase">
+    <div class="main">    
+      <!--  Container -------------------->
+      <div class="container">
+        {% block trending %}
+        {% endblock %}
+        {% block tvshow %}
+        {% endblock %}
+        {% block tvseason %}
+        {% endblock %} 
+        {% block tvepisode %}
+        {% endblock %}     
+        {% block movie %} 
+        {% endblock %}
+        {% block detail %} 
+        {% endblock %}
+        {% block discover %}
+        {% endblock %}  
+        {% block popularity %}
+        {% endblock %}             
+        {% block recommen %} 
+        {% endblock %} 
+        {% block no_found %}
+        {% endblock %}                             
+      </div>            
+    </div>  
+  </section>   
+  <!-- Footer ----------------------------->
+  <div class="footer-gn">
+    {% block footer %}
+    <div>
+      &copy; Copyright 2021 by 
+      <a class="footer" href="https://linkedin.com/in/eddie-espinoza" target="_blanc">
+        <img  class="foot_img1" src="{{ url_for('.static', filename='img/logoE256blue.png')}}" alt=""> Eddie75Espinoza
+      </a>
+        |   Powered by 
+        <a class="footer" href="https://www.themoviedb.org/">
+          <img class="foot_img2" src="{{ url_for('.static', filename='img/blue_square_2-d537fb228cf3ded904ef09b136fe3fec72548ebc1fea3fbbd1ad9e36364db38b.svg')}}" alt="The Movie database"> TMDb
+        </a>
+    </div>
+    {% endblock %}
+  </div> 
+  <script src="{{ url_for('.static', filename='js/main.js')}}"></script>  
+</body>
+</html>

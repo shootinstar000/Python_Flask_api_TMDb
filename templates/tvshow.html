@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block tvshow %}
+<!-- Search -----------------------> 
+    <form class="search" action="/tvshow" method="POST">
+        <input class="form-control" type="search" name="tv_show" placeholder="Find your favorite series..." autofocus>        
+        <button class="fas fa-search" type="submit"></button>
+    </form>
+    <div class="tvshow-poster">
+        {% if searchNo %} 
+        <div class="data">
+            <h3>{{ searchNo }}</h3>
+        </div>     
+        {% else -%}
+            {% for res in show %}  
+            <div class="card-box" action="/tvshow" >                             
+                <a href="/tvseason/{{ res.id }}"><img class="poster" src="{{ url_img_base }}{{ res.poster_path }}" alt="{{ res.title }}"></a> 
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

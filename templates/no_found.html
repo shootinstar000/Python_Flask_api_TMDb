@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block no_found %}
+    <div class="trailer"> 
+        <h2>{{ searchNo }}</h2> 
+        <div class="data">        
+            <h3>{{ found.title }}</h3>
+            <p>{{ year }}</p> 
+            {% if found.backdrop_path != none %}
+                <img src="https://image.tmdb.org/t/p/w185{{ found.backdrop_path }}" alt="{{ found.original_title }}">
+            {% endif %}
+            <p>{{ genres }}</p>
+            <div class="overw">
+                <p>{{ found.overview }}</p>
+            </div>  
+        </div>
+        <img src="{{ url_for('.static', filename='img/faviconblue.ico')}}" alt="">
+    </div>
+{% endblock %}

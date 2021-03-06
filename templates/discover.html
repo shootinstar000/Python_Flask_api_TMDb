@@ -1,0 +1,23 @@
+{% extends "index.html" %}
+{% block discover %}
+<!-- Search -----------------------> 
+  <form class="search" action="/discover" method="POST">
+    <input class="form-control" type="search" name="Title" placeholder="Discover movies for year..." autofocus>        
+    <button class="fas fa-search" type="submit"></button>
+  </form> 
+    {% if searchNo %} 
+    <div class="data">
+      <h3>{{ searchNo }}</h3>
+    </div> 
+    {% else -%}
+    <div class="card-discover" action="/discover" method="POST">
+        {% for dis in discover_list %}
+            <div class="card-box">
+              <a href="/detail/{{ dis.id }}">                      
+                <img class="poster" src="{{ url_img_base }}{{ dis.poster_path }}" alt="{{ dis.title }}">
+              </a>
+            </div>
+            {% endfor %}
+    </div>
+    {% endif %}
+{% endblock %}
