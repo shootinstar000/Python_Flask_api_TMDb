@@ -27,7 +27,7 @@ from werkzeug.routing import BaseConverter
 app = Flask(__name__)
 
 tmdb = TMDb()
-tmdb.api_key = '4d59ff46d06ea2c514be24a512551697'
+tmdb.api_key = 'YOUR_API_KEY_HERE'
 
 tmdb.language = 'en'
 tmdb.debug = True
