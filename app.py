@@ -27,7 +27,7 @@ from werkzeug.routing import BaseConverter
 app = Flask(__name__)
 
 tmdb = TMDb()
-tmdb.api_key = 'YOUR_API_KEY_HERE' 
+tmdb.api_key = '4d59ff46d06ea2c514be24a512551697'
 
 tmdb.language = 'en'
 tmdb.debug = True
@@ -54,6 +54,33 @@ def get_genres(id):
        
     return genre
 
+@app.route('/trending')
+def trendAll():
+    # obtiene la lista de peliculas y series en tendencia
+    trends = trending.all_week()    
+    
+    return render_template('trending.html', url_img_base = url_img_base, trends = trends)
+
+@app.route('/movie_trend')
+def trendMovie():
+    # Obtiene la lista de peliculas de la semana
+    listTrendMovie = trending.movie_week()
+
+    return render_template('movie_trend.html', url_img_base = url_img_base, listTrendMovie = listTrendMovie)
+
+@app.route('/tv_trend')
+def trendTv():
+    #Obtiene la lista de series de Tv de la semana
+    listTrendTv = trending.tv_week()
+
+    return render_template('tv_trend.html', url_img_base = url_img_base, listTrendTv = listTrendTv)
+
+@app.route('/')
+def index():
+    # HOME
+    
+    return trendAll()
+
 @app.route('/popularity')
 def popularity():
     # obtiene la lista de peliculas populares para la fecha
@@ -61,25 +88,12 @@ def popularity():
 
     return render_template('popularity.html', populars = populars, url_img_base = url_img_base)
 
-@app.route('/trending')
-def trendMovie():
-    # obtiene la lista de peliculas y series en tendencia
-    trends = trending.all_week()    
-    
-    return render_template('trending.html', url_img_base = url_img_base, trends = trends)
-
-
-
-@app.route('/')
-def index():
-    # HOME
-    
-    return trendMovie()
-
 @app.route('/movie', methods=['GET','POST'])
 def findMovie(): 
     # obtiene las peliculas basadas en la solicyud del usurio   
     try: 
+        if request.method == 'GET':
+            return trendMovie()
         search_list = []        
         if request.method == 'POST':
             title = request.form['Title']
@@ -176,6 +190,8 @@ def tvshow():
     '''
     obtiene lista de series de tv basadas en el criterio de busqueda
     '''
+    if request.method == 'GET':
+            return trendTv()
     show = []
     if request.method == 'POST':
         tv_show = request.form['tv_show']

@@ -55,7 +55,7 @@ nav{
 }
 nav .navbar-nav li a:hover{  
   color: var(--color-primaryB);
-  box-shadow: 5px 10px 30px var(--color-background);
+  box-shadow: 2px 5px 10px var(--color-background);
   transition: all ease 0.3  s;
   letter-spacing: 4px;
   border-bottom: 2px solid var(--color-primaryB);
@@ -91,7 +91,7 @@ button:hover{
   padding-top: 5rem;
 } */
 /* Movie ******************************/
-.card-trend, .card-movie, .card-popular, .card-discover, .reco-card{ 
+.card-trend, .card-movie, .card-popular, .card-discover{ 
   margin: auto;
   padding-top: 5rem;   
   justify-content: center;
@@ -110,6 +110,21 @@ button:hover{
   border-radius: 10px; 
   object-fit: cover;  
 }
+.card-box a img:hover{
+  height: 410px;
+  width: 270px;
+  box-shadow: 2px 5px 10px var(--color-background);
+}
+.box-movie a img:hover{
+  height: 410px;
+  width: 270px;
+  box-shadow: 2px 5px 10px var(--color-background);
+}
+.reco-box a img:hover{
+  height: 410px;
+  width: 270px;
+  box-shadow: 2px 5px 10px var(--color-background);
+}
 /* Detail - Trailer ****************************/
 .trailer{
   margin: 1rem;
@@ -119,9 +134,6 @@ button:hover{
   align-items: center;  
 }
 .data, .data-tv{
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
   padding: 1rem;
   color: var(--color-font-front);
 }
@@ -165,12 +177,21 @@ button:hover{
   letter-spacing: 6px;
 }
 /* Recommendations ********************/
-
+.reco-title{
+  margin: 4rem 4rem 0;
+}
+.reco-card{ 
+  margin: auto;   
+  justify-content: center;
+  display: grid; 
+  flex-direction: column;
+  grid-gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+}
 /* Series *****************************/
 .tvshow-poster{
   display: grid;
-  margin: 1rem;
-  border-radius: 10px;
+  margin: 1rem;  
   justify-content: center;
   align-items: center;
   grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
@@ -180,7 +201,6 @@ button:hover{
 .season-content{
   margin: 3rem;
   padding: 0.3rem;
-  /* width: 95%; */
   display: grid;
   justify-content: space-around;
   grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
@@ -190,15 +210,19 @@ button:hover{
   display: grid;
   flex-direction: column;
   justify-content: center;
-  /* justify-items: center; */
-  background-color: var(--color-nav);
+  background-color: var(--color-background);
   border-radius: 10px;
 }
 .name-season h3{  
   margin-left: 1rem;
 }
 .season-tv a img{
-  max-height: 384px;  
+  max-height: 380px;  
+}
+.season-tv:hover{    
+  box-shadow: 2px 5px 10px var(--color-background);
+  background-color: var(--color-black);
+  border: 0.2rem solid var(--color-background);
 }
 /* Episodes ***************************/
 .episode-tv{

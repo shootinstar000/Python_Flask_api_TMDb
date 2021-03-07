@@ -1,0 +1,18 @@
+{% extends "index.html" %}
+{% block tvTrend %}
+<!-- Search -----------------------> 
+<form class="search" action="/tvshow" method="POST">
+    <input class="form-control" type="search" name="tv_show" placeholder="Find your favorite series..." autofocus>        
+    <button class="fas fa-search" type="submit"></button>
+</form>
+<!-- -->
+<div class="card-popular" action="/tvshow" method="POST">
+    {% for popular in listTrendTv %}
+        <div class="card-box">                   
+          <a href="/tvseason/{{ popular.id }}">
+            <img class="poster" src="{{ url_img_base }}{{ popular.poster_path }}" alt="{{ popular.title }}">                
+          </a>              
+        </div>
+        {% endfor %}
+</div>
+{% endblock %}

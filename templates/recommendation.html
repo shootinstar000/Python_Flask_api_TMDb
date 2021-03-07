@@ -1,8 +1,10 @@
 {% extends "index.html" %}
 {% block recommen %}
 <!-- Search -----------------------> 
-  <h2>Our recommendations</h2>   
-  <div class="reco-card" action="/recommendation/{{ id }}">
+<div class="reco-title">
+  <h2>Our recommendations</h2>
+</div>
+<div class="reco-card" action="/recommendation/{{ id }}">     
   {% for res in reco %}  
     <div class="reco-box">                             
       <div class="reco-poster">                      
@@ -10,5 +12,5 @@
       </div>
     </div>
   {% endfor %}
-  </div>
+</div>
 {% endblock %}
