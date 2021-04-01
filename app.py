@@ -22,12 +22,12 @@ from flask import Flask, request, redirect, render_template, jsonify, url_for
 from tmdbv3api import TMDb
 from tmdbv3api import Movie, Discover, Trending, TV, Season, Episode
 from werkzeug.routing import BaseConverter
-#from flask_bootstrap import Bootstrap
+from config import API_KEY // modulo con clave Api
 
 app = Flask(__name__)
 
 tmdb = TMDb()
-tmdb.api_key = 'YOUR_API_KEY_HERE'
+tmdb.api_key = API_KEY
 
 tmdb.language = 'en'
 tmdb.debug = True
@@ -102,7 +102,7 @@ def findMovie():
                 search_list = movie.search(title) 
                         
             else:
-                searchNo = 'No Search'
+                searchNo = 'No Search Results'
                 return render_template('movie.html', searchNo = searchNo)                     
     except NameError:
         print("Something else went wrong")
@@ -119,9 +119,9 @@ def detail(id):
             trailer = search_details.videos['results'][0].key # se obtiene el trailer
             genre_list = get_genres(id) # funcion para generar el genero           
         else:            
-            return render_template('no_found.html', searchNo = 'Trailer No Found', found = search_details, year = year, genres = genre_list), 404       
+            return render_template('no_found.html', searchNo = 'Trailer not found', found = search_details, year = year, genres = genre_list), 404       
     except NameError:
-        return render_template('no_found.html', searchNo = 'Trailer No Found', found = search_details, year = year), 404        
+        return render_template('no_found.html', searchNo = 'Trailer not found', found = search_details, year = year), 404        
     return render_template('detail.html', trailer = trailer, genres = genre_list, searchs_details = search_details, year = year)
 
 
@@ -169,7 +169,7 @@ def discover_new():
                 search_list = discover.discover_movies({'year' : year_movie}) 
                 return render_template('discover.html', discover_list = search_list, url_img_base = url_img_base)                      
             else:
-                searchNo = 'No Search'
+                searchNo = 'No Search Results'
                 return render_template('discover.html', searchNo = searchNo)
     except NameError:
         print("Something else went wrong")
@@ -198,7 +198,7 @@ def tvshow():
         if len(tv_show) != 0:      
             show = tv.search(tv_show)
         else:
-            searchNo = 'No Search'
+            searchNo = 'No Search Results'
             return render_template('tvshow.html', searchNo = searchNo)
 
     return render_template('tvshow.html', show = show, url_img_base = url_img_base)
