@@ -22,7 +22,7 @@ from flask import Flask, request, redirect, render_template, jsonify, url_for
 from tmdbv3api import TMDb
 from tmdbv3api import Movie, Discover, Trending, TV, Season, Episode
 from werkzeug.routing import BaseConverter
-from config import API_KEY // modulo con clave Api
+from config import API_KEY # modulo con clave Api
 
 app = Flask(__name__)
 
