@@ -1,0 +1,28 @@
+{% block navbar %}
+
+<nav class="navibar" id="navibar">
+    <div class="e_content">
+        <!-- Logo -->
+        <div class="navibar_branch">
+            <a href="/" id="e_logo">
+                <img class="logo-x" src="{{ url_for('.static', filename='img/faviconblue.ico')}}" alt="">
+            </a>  
+        </div>       
+        <!-- Menu --------------- -->         
+        <ul class="menu-list">
+            <div class="icon cancel-btn">
+                <i class="fas fa-times"></i>
+            </div>
+            <li><a href="/"> Home </a></li>
+            <li><a href="/movie"> Movies </a></li>
+            <li><a href="/tvshow"> Series </a></li>
+            <li><a href="/popularity"> Popular </a></li>
+            <li><a href="/discover"> Discover</a></li>          
+        </ul> 
+        <div class="icon menu-btn">
+            <i class="fas fa-bars"></i>
+        </div> 
+    </div>    
+</nav>
+
+{% endblock  %}

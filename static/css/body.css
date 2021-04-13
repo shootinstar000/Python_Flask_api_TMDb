@@ -1,0 +1,268 @@
+:root{
+    --color-black: #0f0f0f;
+    --color-background: #2d2e2e;
+    --color-nav: #716969;
+    --color-font-front: #fbfbfb;
+    --color-shadow: #bcabae ;  
+    --color-primaryB: rgba(63, 152, 237, 1);
+}
+body {
+    margin: 0px;
+    background-color: var(--color-black);
+    color: var(--color-font-front);
+}
+/* SEARCH *****************************************/
+.search{
+    display: flex; 
+    justify-content: center;  
+    align-items: center; 
+    width: 100%; 
+    padding-top: 5rem;
+  }
+  .search input{
+      width: 48%;
+      height: 43px;
+      color: var(--color-font-front);
+      border: 3px solid var(--color-background);
+      border-radius: 10px;
+      outline: none;
+      background-color: transparent;
+  }
+  button{  
+      border-radius: 10px;
+      width: 15%;
+      height: 43px;
+      letter-spacing: 1px;    
+  }
+  button:hover{
+      border: 0.2rem solid var(--color-warningR);
+  }
+  /* Movie ******************************/
+.card-trend, .card-movie, .card-popular, .card-discover{ 
+    margin: auto;
+    padding-top: 5rem;   
+    justify-content: center;
+    display: grid; 
+    flex-direction: column;
+    grid-gap: 0.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+  }
+  .box-movie, .card-box, .reco-box{
+    display: flex;    
+    flex-direction: column;    
+  }
+  .poster, .reco-poster a img{
+    height: auto;
+    width: 100%;
+    border-radius: 10px; 
+    object-fit: cover;  
+  }
+  .card-box a img:hover{
+    height: 410px;
+    width: 270px;
+    box-shadow: 2px 5px 10px var(--color-background);
+  }
+  .box-movie a img:hover{
+    height: 410px;
+    width: 270px;
+    box-shadow: 2px 5px 10px var(--color-background);
+  }
+  .reco-box a img:hover{
+    height: 410px;
+    width: 270px;
+    box-shadow: 2px 5px 10px var(--color-background);
+  }
+  /* Detail - Trailer ****************************/
+  .trailer{
+    margin: 1rem;
+    padding-top: 4.2rem;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;  
+  }
+  .data, .data-tv{
+    padding: 1rem;
+    color: var(--color-font-front);
+  }
+  .data h3{
+    font-size: 2rem;  
+  }
+  .data p{
+    font-size: 1.2rem;
+  }
+  .trailer-frame{
+    display: grid;
+    place-items: center;
+    width : 100%; 
+    /* padding-top: 56.25%; 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+  }
+  .trailer-frame iframe{
+    width: 600px;
+    height: 300px;  
+  }
+  .overw{
+    white-space: pre-line;
+    max-width: 500px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  /* enlace de our recommendations */
+  .enlace {    /* enlace de our recommendations */
+    margin: 1rem;
+    cursor: pointer;  
+    padding: 10px 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-font-front);
+    background-color: var(--color-warningR);
+    border-radius: 10px;
+    letter-spacing: 2px;
+    transition: 0.2s;
+  }
+  .enlace:hover{
+    letter-spacing: 6px;
+  }
+  /* Recommendations ********************/
+  .reco-title{
+    margin: 4rem 4rem 0;
+  }
+  .reco-card{ 
+    margin: auto;   
+    justify-content: center;
+    display: grid; 
+    flex-direction: column;
+    grid-gap: 0.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+  }
+  /* Series TV Shows*****************************/
+  .tvshow-poster{
+    display: grid;
+    margin: 1rem;  
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+    grid-gap: 0.4rem;
+  }
+  /* Seasons series TV Seasons*********************/
+  .season-content{
+    margin: 3rem;
+    margin-top: 5rem;
+    padding: 0.3rem;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 280px));
+  }
+  .season-tv{      
+    margin: 0.3rem;
+    display: grid;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--color-background);
+    border-radius: 10px;
+  }
+  .name-season h3{  
+    margin-left: 1rem;
+  }
+  .season-tv a img{
+    max-height: 380px;  
+  }
+  .season-tv:hover{    
+    box-shadow: 2px 5px 10px var(--color-background);
+    background-color: var(--color-black);
+    border: 0.2rem solid var(--color-background);
+  }
+  /* Episodes ***************************/
+  .episode-tv{
+    margin-top: 6rem;
+    padding-bottom: 1rem;  
+    display: grid;
+    /* flex-direction: grid; */
+    justify-content: space-around;     
+    grid-gap: 0.2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 280px)); 
+  }
+  .episode-data{
+    margin: 0.1rem;
+    padding: 0.5rem;
+    border: 0.3rem solid var(--color-nav);  
+    border-radius: 10px;  
+    color: var(--color-font-front);
+    user-select: none;
+  }
+  .episode-data img{
+    width: 100%;
+    margin: 0;
+    border-radius: 10px;
+  }
+  /*  Footer  ***************************/
+.footer-gn{
+    padding-top: 1rem;
+    background-color: var(--color-nav);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  .footer{  
+    letter-spacing: 2px;
+    color: var(--color-font-front);
+  }
+  .foot_img1{
+    height: 32px;
+    border-radius: 50%;  
+  }
+  .foot_img2{
+    height: 28px;
+  }
+
+  /* Media screen ******************************/
+  @media screen and (max-width: 860px){
+    .trailer{
+      margin: 1rem;
+      padding: 1rem;      
+      display: grid;
+      justify-content: center;
+    }
+    .trailer-frame{
+      display: grid;      
+      width : 70%; 
+    }
+    .trailer-frame iframe{
+      width: 480px;
+      height: 270px;        
+    }
+    .data img{
+      object-fit: scale-down;
+    }
+  }
+
+  @media screen and (max-width: 420px){
+    .data{
+      display: grid;
+    }
+    .trailer{              
+      display: grid;
+    }
+    .trailer-frame{
+      display: grid;             
+    }
+    .trailer-frame iframe{
+      width: 300px;
+      height: 180px;  
+    }
+    .season-content{
+      margin-top: 4rem;
+      margin: 0.5rem;
+      display: grid;      
+      justify-content: center;
+      width: fit-content;
+    }
+    .episode-tv{
+      padding-top: 5rem;
+      padding-bottom: 1rem;
+      display: grid;
+      justify-content: center;
+      grid-gap: 0.2rem;
+    }
+  }

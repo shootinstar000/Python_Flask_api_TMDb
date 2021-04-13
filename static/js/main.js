@@ -1,11 +1,19 @@
-const navbar_cross = document.querySelector(".navbar-cross");
-const navbar_nav = document.querySelector(".navbar-nav");
-const links = document.querySelector(".navbar-nav li");
+const body = document.querySelector("body");
+const navbar = document.querySelector(".navibar");
+const menuBtn = document.querySelector(".menu-btn");
+const cancelBtn = document.querySelector(".cancel-btn");
 
-navbar_cross.addEventListener('click', ()=>{
-    navbar_nav.classList.toggle("open");
-    links.forEach(link => {
-        link.classList.toggle("fade");
-    });
-    navbar_cross.classList.toggle("toggle");
-});
+menuBtn.onclick = ()=>{
+      navbar.classList.add("show");      
+      menuBtn.classList.add("hide");
+      body.classList.add("disabled");
+}
+
+cancelBtn.onclick = ()=>{
+      body.classList.remove("disabled");
+      navbar.classList.remove("show");
+      menuBtn.classList.remove("hide");
+}
+window.onscroll = ()=>{
+      this.scrollY > 20 ? navbar.classList.add("sticky") : navbar.classList.remove("sticky");
+}

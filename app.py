@@ -220,5 +220,5 @@ def tv_episode(id, season_number):
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='192.168.0.99', port = 3000, debug=True)  # '192.168.0.99'
 
