@@ -32,7 +32,7 @@ body {
   margin-top: 0;
   position: fixed;
   width: 100%;
-  z-index: 100;
+  z-index: 1;
   padding: 25px 0;
   transition: all 0.3s ease;
   }
@@ -79,7 +79,7 @@ body {
   transition: all 0.3s ease;
   }
 .menu-list li a:hover{
-  color: var(--color-background-light);
+  color: var(--color-shadow);
 }
 .icon{    
   font-size: 20px;
@@ -143,6 +143,9 @@ body {
   .navibar.show .menu-list li a{
     margin-left: 0px;
     color: var(--color-font-front);
+  }
+  .navibar.show .menu-list li a:hover{
+    color: var(--color-shadow);
   }
 }
 @media (max-width: 380px) {

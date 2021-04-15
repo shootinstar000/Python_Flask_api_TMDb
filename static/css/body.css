@@ -126,10 +126,11 @@ body {
   }
   /* Recommendations ********************/
   .reco-title{
+    position: absolute;
     margin: 4rem 4rem 0;
   }
   .reco-card{ 
-    margin: auto;   
+    margin: auto;
     justify-content: center;
     display: grid; 
     flex-direction: column;
@@ -207,6 +208,7 @@ body {
   .footer{  
     letter-spacing: 2px;
     color: var(--color-font-front);
+    text-decoration: none;
   }
   .foot_img1{
     height: 32px;
