@@ -8,8 +8,11 @@
     --color-alertY: rgba(255, 231, 76, 1);
     --color-warningR: rgba(255, 89, 100, 1);
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 body {
-  margin: 0px;
   background-color: var(--color-black);
   color: var(--color-font-front);
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -29,28 +32,25 @@ body {
 }
 /* Navigation */
 .navibar{
-  margin-top: 0;
   position: fixed;
   width: 100%;
-  z-index: 1;
-  padding: 25px 0;
+  z-index: 1;  
   transition: all 0.3s ease;
   }
 .e_content{
   color: var(--color-font-front);
-  max-width: 1250px;
+  max-width: 1440px;
   margin: auto;
   padding: 0 30px;
   }
 .navibar.sticky{
   background: var(--color-background-md);
-  padding: 10px 0;
   box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.1);
   }
 .navibar .e_content{    
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   }
 .navibar .e_content img{
   /* border-radius: 50%; */

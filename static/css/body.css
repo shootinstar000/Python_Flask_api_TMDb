@@ -87,8 +87,8 @@ button:hover{
   /* padding-top: 56.25%; 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
 }
 .trailer-frame iframe{
-  width: 600px;
-  height: 300px;  
+  width: 800px;
+  height: 600px;  
 }
 .overw{
   white-space: pre-line;
@@ -180,7 +180,7 @@ button:hover{
 }
 /*  Footer  ***************************/
 .footer-gn{
-  padding-top: 1rem;
+  padding-bottom: 0;
   background-color: var(--color-nav);
   display: flex;
   justify-content: center;
@@ -200,6 +200,32 @@ button:hover{
 }
 
 /* Media screen ******************************/
+@media screen and (max-width: 1920px){
+  .card-trend, .card-movie, .card-popular, .card-discover, .reco-card{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 350px));
+  }
+  .card-box a img:hover, .card-trend a img:hover, .card-movie a img:hover, .reco-card a img:hover, .card-popular a img:hover, .card-discover a img:hover{
+    width: 340px;
+    height: 510px;      
+  }
+  .trailer{
+    padding: 14rem 5rem;      
+    display: flex;
+    justify-content: center;
+  }
+  .trailer-frame{
+    display: grid;      
+    width : 100%; 
+  }
+  .trailer-frame iframe{
+    width: 752px;
+    height: 423px;      
+    object-fit: contain;  
+  }
+  .data img{
+    object-fit: scale-down;
+  }
+}
 @media screen and (max-width: 860px){
   .card-trend, .card-movie, .card-popular, .card-discover{
     grid-template-columns: repeat(auto-fit, minmax(150px, 210px));
